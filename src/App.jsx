@@ -11,23 +11,29 @@ import BlurBlob from './components/BlurBlob';
 
 const App = () => {
   return (
-    <div className="bg-[#050414] overflow-x-hidden relative">
+    <div className="relative min-h-screen overflow-x-clip bg-ink-950 font-sans text-platinum">
 
-       <BlurBlob position={{ top: '35%', left: '20%' }} size={{ width: '30%', height: '40%' }} />
+      {/* Ambient light: champagne, deep navy and a trace of platinum */}
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        <BlurBlob tone="gold" position={{ top: '6%', left: '14%' }} size={{ width: '58vw', height: '58vw' }} />
+        <BlurBlob tone="navy" position={{ top: '62%', left: '92%' }} size={{ width: '64vw', height: '64vw' }} delay="-12s" />
+        <BlurBlob tone="platinum" position={{ top: '100%', left: '30%' }} size={{ width: '48vw', height: '48vw' }} delay="-24s" />
+      </div>
+      <div aria-hidden="true" className="vignette" />
+      <div aria-hidden="true" className="grain" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-      
-      <div className="relative pt-16 sm:pt-20">
+      <div className="relative z-10">
         <Navbar />
-        <About />
-        <Skills />
-        <Experience />
-        <Work />
-        <Education />
-        <Contact />
+        <main>
+          <About />
+          <Skills />
+          <Experience />
+          <Work />
+          <Education />
+          <Contact />
+        </main>
         <Footer />
       </div>
-
     </div>
   );
 };
