@@ -4,6 +4,15 @@ import Reveal from "../ui/Reveal";
 import Spotlight from "../ui/Spotlight";
 import SectionTitle from "../ui/SectionTitle";
 
+// Makes sure a link always opens as an absolute URL.
+// Without "https://", the browser treats it as a path on your own site,
+// and Netlify's SPA redirect then shows your portfolio again instead of the project.
+const toUrl = (link) => {
+  if (!link || !link.trim()) return "";
+  const l = link.trim();
+  return /^https?:\/\//i.test(l) ? l : `https://${l}`;
+};
+
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -63,7 +72,7 @@ const Work = () => {
                       src={project.image}
                       alt={project.title}
                       loading="lazy"
-                      className="h-52 w-full object-cover transition-transform duration-[1200ms] ease-silk group-hover:scale-[1.06]"
+                      className="h-52 w-full object-cover object-top transition-transform duration-[1200ms] ease-silk group-hover:scale-[1.06]"
                     />
                     <div
                       aria-hidden="true"
@@ -143,22 +152,26 @@ const Work = () => {
                   ))}
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-                  <a
-                    href={selectedProject.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-ghost flex-1"
-                  >
-                    View Code
-                  </a>
-                  <a
-                    href={selectedProject.webapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-gold flex-1 !px-6 !text-sm !tracking-wide"
-                  >
-                    <span className="relative z-10">View Live</span>
-                  </a>
+                  {toUrl(selectedProject.github) && (
+                    <a
+                      href={toUrl(selectedProject.github)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-ghost flex-1"
+                    >
+                      View Code
+                    </a>
+                  )}
+                  {toUrl(selectedProject.webapp) && (
+                    <a
+                      href={toUrl(selectedProject.webapp)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-gold flex-1 !px-6 !text-sm !tracking-wide"
+                    >
+                      <span className="relative z-10">View Live</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

@@ -84,8 +84,8 @@ const Navbar = () => {
             aria-label="Back to top"
           >
             <span className="text-gold-400 transition-transform duration-500 ease-silk group-hover:-translate-x-0.5 inline-block">&lt;</span>
-            <span className="text-platinum">Hamza</span>
-            <span className="text-platinum">Feroze</span>
+            <span className="text-platinum">Muhammad</span>
+            <span className="text-platinum">Hilal</span>
             <span className="text-gold-400 transition-transform duration-500 ease-silk group-hover:translate-x-0.5 inline-block">&gt;</span>
           </button>
 
@@ -115,7 +115,7 @@ const Navbar = () => {
           {/* Social Icons */}
           <div className="hidden items-center gap-1 md:flex">
             <a
-              href="https://github.com/hamzahf123"
+              href="https://github.com/Muhammadsafiktk"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -123,15 +123,9 @@ const Navbar = () => {
             >
               <FaGithub size={20} />
             </a>
-            <a
-              href="https://www.linkedin.com/in/hamxa-feroze/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="grid h-10 w-10 place-items-center rounded-full text-mist transition-all duration-500 ease-silk hover:bg-white/[0.06] hover:text-gold-300"
-            >
+            <span aria-hidden="true" className="grid h-10 w-10 place-items-center rounded-full text-mist transition-all duration-500 ease-silk hover:bg-white/[0.06] hover:text-gold-300">
               <FaLinkedin size={20} />
-            </a>
+            </span>
           </div>
 
           {/* Mobile Menu Icon */}
@@ -176,7 +170,7 @@ const Navbar = () => {
             </ul>
             <div className="mt-2 flex gap-2 border-t border-white/[0.07] px-2 pt-3">
               <a
-                href="https://github.com/hamzahf123"
+                href="https://github.com/Muhammadsafiktk"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -184,15 +178,9 @@ const Navbar = () => {
               >
                 <FaGithub size={22} />
               </a>
-              <a
-                href="https://www.linkedin.com/in/hamxa-feroze/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="grid h-11 w-11 place-items-center rounded-full text-mist transition-colors hover:bg-white/[0.06] hover:text-gold-300"
-              >
+              <span aria-hidden="true" className="grid h-11 w-11 place-items-center rounded-full text-mist transition-colors hover:bg-white/[0.06] hover:text-gold-300">
                 <FaLinkedin size={22} />
-              </a>
+              </span>
             </div>
           </div>
         )}
